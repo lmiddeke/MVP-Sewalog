@@ -1,0 +1,39 @@
+<%- include('partials/header') -%>
+      <div>
+          <div id="uploadForm">
+            <h2 class="underline">Add a pattern</h2>
+            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
+              <div class="textTitleSpace">
+                  <label  for="title">pattern name</label>
+                  <textarea type="text" id="title" name="title"></textarea>
+              </div>
+              <div class="headingSpace">
+                <label for="description">description</label>
+                <textarea type="text" id="description" name="description"></textarea>
+              </div>
+              <div class="headingSpace">
+                <label for="fabric">fabric</label>
+                <textarea type="text" id="fabric" name="fabric"></textarea>
+              </div>
+              <div class="headingSpace">
+                <label for="imgUpload">image</label>
+                <input type="file" id="imageUpload" name="file">
+              </div>
+              <div class="headingSpace">
+                <button class="inBtn" type="submit" value="Upload">upload</button>
+              </div>
+            </form>
+            
+          </div>
+      </div>
+      <div id="profile">
+        <a href="/profile">
+          <img src="/imgs/profile.png" alt="profile" width="100" height="200">
+        </a>
+        <p><strong><%= user.userName %></strong></p>
+        <div>
+          <!-- <p><strong>Email</strong>: <%= user.email %></p> -->
+          <a class="inBtn" href="/logout">logout</a>
+        </div>
+      </div>
+<%- include('partials/footer') -%>
